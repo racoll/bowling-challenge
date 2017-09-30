@@ -41,5 +41,11 @@ Game.prototype.currentScores = function() {
 };
 
 Game.prototype.score = function() {
-  return 250;
+  // return 250;
+  // var result = 0;
+  // for (var i = 0; i < 20; i++); {
+  //   result += this.rolls[i];
+  // }
+  // return result;
+  this.currentScores.reduce(function(acc, val) { return acc + val; });
 };
