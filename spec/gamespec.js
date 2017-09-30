@@ -7,7 +7,6 @@ describe("Game", function() {
   });
 
 
-
   it("can create a new game", function() {
 
   });
@@ -20,6 +19,9 @@ describe("Game", function() {
     expect(game.gutter()).toBe(0);
   });
 
+  it("can be a max score game", function() {
+    expect(game.maxScore()).toBe(300);
+  });
 
 
 });
