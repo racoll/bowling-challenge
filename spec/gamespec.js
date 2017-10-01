@@ -18,7 +18,7 @@ describe("Game", function() {
 
   it("can be a max score game", function() {
     for (var i = 0; i < 20; i++) {
-      game.roll(10)
+      game.roll(10);
     }
     expect(game.maxScore()).toBe(300);
   });
@@ -45,11 +45,11 @@ describe("Game", function() {
   it("can display current scores", function() {
       game.roll(7);
     // expect(game.currentScores()).toBe(this.rolls);
-    expect(game.currentScores()).toBe([7]);
+    expect(game.currentScores()).toEqual([7]);
   });
 
   it("Can display total score", function() {
-    expect(game.score()).toBe(250);
+    expect(game.scoreTotal()).toEqual(0);
   });
 
 });

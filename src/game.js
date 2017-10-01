@@ -1,16 +1,16 @@
 "use strict";
 
 function Game() {
-  this.START_SCORE = 0
-  this.GUTTER_GAME_SCORE = 0
-  this.MAX_GAME_SCORE = 300
-  this.STRIKE_SCORE = 10
-  this.ROLL_ONLY_1 = 20
+  this.START_SCORE = 0;
+  this.GUTTER_GAME_SCORE = 0;
+  this.MAX_GAME_SCORE = 300;
+  this.STRIKE_SCORE = 10;
+  this.ROLL_ONLY_1 = 20;
   this.rolls = [];
 }
 
 Game.prototype.startPoints = function() {
-  return this.START_SCORE
+  return this.START_SCORE;
 };
 
 Game.prototype.gutter = function() {
@@ -40,12 +40,11 @@ Game.prototype.currentScores = function() {
   // this.rolls.reduce(function(acc, val) { return acc + val; });
 };
 
-Game.prototype.score = function() {
+Game.prototype.scoreTotal = function() {
   // return 250;
-  // var result = 0;
-  // for (var i = 0; i < 20; i++); {
-  //   result += this.rolls[i];
-  // }
-  // return result;
-  this.currentScores.reduce(function(acc, val) { return acc + val; });
+  var count = 0;
+     for (var i = this.rolls.length; i--;) { // understand this!
+       count += this.rolls[i];
+     }
+     return count;
 };
