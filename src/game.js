@@ -7,6 +7,7 @@ function Game() {
   this.STRIKE_SCORE = 10;
   this.ROLL_ONLY_1 = 20;
   this.rolls = [];
+  // set max capacity of rolls?
 }
 
 Game.prototype.startPoints = function() {
@@ -15,10 +16,12 @@ Game.prototype.startPoints = function() {
 
 Game.prototype.gutter = function() {
   return this.GUTTER_GAME_SCORE;
+  // return this.rolls;
 };
 
 Game.prototype.maxScore = function() {
   return this.MAX_GAME_SCORE;
+  // return this.rolls;
 };
 
 Game.prototype.rollStrike = function() {
@@ -32,7 +35,8 @@ Game.prototype.roll = function(pins) {
 };
 
 Game.prototype.scoreOnes = function() {
-  return 20;
+  return this.ROLL_ONLY_1;
+
 };
 
 Game.prototype.currentScores = function() {
@@ -42,6 +46,7 @@ Game.prototype.currentScores = function() {
   // this.rolls.reduce(function(acc, val) { return acc + val; });
 };
 
+
 Game.prototype.scoreTotal = function() {
   // return 250;
   var count = 0;
@@ -50,3 +55,19 @@ Game.prototype.scoreTotal = function() {
      }
      return count;
 };
+
+// Game.prototype.scoreTotal = function() {
+//   var count = 0;
+//   var rollIndex = 0;
+//
+//   for (var frameIndex = 0; frameIndex < 10; frameIndex++); {
+//     if (this.rolls[rollIndex] + this.rolls[rollIndex + 1] == 10) {
+//       count += this.rolls[rollIndex] + this.rolls[rollIndex + 1] + this.rolls[rollIndex + 2];
+//     } else {
+//         count += this.rolls[rollIndex] + this.rolls[rollIndex + 1];
+//     }
+//     rollIndex += 2;
+// }
+//
+//   return count;
+// };

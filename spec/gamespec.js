@@ -2,6 +2,7 @@ describe("Game", function() {
 
   var game;
 
+
   beforeEach(function() {
     game = new Game();
   });
@@ -34,6 +35,20 @@ describe("Game", function() {
     expect(game.rollStrike()).toBe(10);
   });
 
+  // it("can roll a spare", function() {
+  //   game.roll(4);
+  //   game.roll(3);
+  //   game.roll(5); // why is this third one not being read?!
+  //   rollMany(0, 17);
+  //   expect(game.scoreTotal()).toBe(11);
+  // });
+  //
+  // var rollMany = function(pins, rolls) {
+  //   for (var i = 0; i < rolls; i++) {
+  //     game.roll(pins);
+  //   }
+  // };
+
   it("can be a gutter game", function() {
     for (var i = 0; i < 20; i++) {
       game.roll(0);
@@ -53,6 +68,7 @@ describe("Game", function() {
     // expect(game.currentScores()).toBe(this.rolls);
     expect(game.currentScores()).toEqual([7]);
   });
+
 
   it("Can display total score", function() {
     expect(game.scoreTotal()).toEqual(0);
