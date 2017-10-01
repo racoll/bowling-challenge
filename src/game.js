@@ -22,11 +22,13 @@ Game.prototype.maxScore = function() {
 };
 
 Game.prototype.rollStrike = function() {
+  this.rolls.push(10);
   return this.STRIKE_SCORE;
 };
 
 Game.prototype.roll = function(pins) {
   this.rolls.push(pins);
+  return pins;
 };
 
 Game.prototype.scoreOnes = function() {

@@ -15,6 +15,10 @@ describe("Game", function() {
     expect(game.startPoints()).toBe(0);
   });
 
+  it("Can perform a roll", function() {
+    game.roll(4);
+    expect(game.currentScores()).toEqual([4]);
+  });
 
   it("can be a max score game", function() {
     for (var i = 0; i < 20; i++) {
@@ -24,8 +28,10 @@ describe("Game", function() {
   });
 
   it("can roll a strike", function() {
+    // for (var....) {
+      game.roll(10);
+    // } include bonus of the following frame's rolls
     expect(game.rollStrike()).toBe(10);
-    // plus bonus?!
   });
 
   it("can be a gutter game", function() {
