@@ -9,7 +9,7 @@ describe("Game", function() {
 
 
   it("can create a new game", function() {
-
+    expect(game).not.toBe(null);
   });
 
   it("starts a game with no points", function() {
@@ -22,7 +22,7 @@ describe("Game", function() {
   });
 
   it("can be a max score game", function() {
-    for (var i = 0; i < 20; i++) {
+    for (var i = 0; i < 20; i++) { // i++ is shorthand for i + 1
       game.roll(10);
     }
     expect(game.maxScore()).toBe(300);
@@ -35,19 +35,6 @@ describe("Game", function() {
     expect(game.rollStrike()).toBe(10);
   });
 
-  // it("can roll a spare", function() {
-  //   game.roll(4);
-  //   game.roll(3);
-  //   game.roll(5); // why is this third one not being read?!
-  //   rollMany(0, 17);
-  //   expect(game.scoreTotal()).toBe(11);
-  // });
-  //
-  // var rollMany = function(pins, rolls) {
-  //   for (var i = 0; i < rolls; i++) {
-  //     game.roll(pins);
-  //   }
-  // };
 
   it("can be a gutter game", function() {
     for (var i = 0; i < 20; i++) {
